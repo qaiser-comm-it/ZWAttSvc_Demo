@@ -22,7 +22,7 @@ public class AttSvcEntityFrameworkCoreModule : AbpModule
 
         Configure<AbpDbContextOptions>(options =>
         {
-            options.UseSqlServer();
+            options.UseNpgsql();
         });
     }
 }

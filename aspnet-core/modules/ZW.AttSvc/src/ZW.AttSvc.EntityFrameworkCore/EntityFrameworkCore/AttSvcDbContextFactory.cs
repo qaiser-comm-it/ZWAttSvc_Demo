@@ -15,7 +15,7 @@ namespace ZW.AttSvc.EntityFrameworkCore
         public AttSvcDbContext CreateDbContext(string[] args)
         {
             var builder = new DbContextOptionsBuilder<AttSvcDbContext>()
-                .UseSqlServer(GetConnectionStringFromConfiguration());
+                .UseNpgsql(GetConnectionStringFromConfiguration());
             return new AttSvcDbContext(builder.Options);
         }
         private static string GetConnectionStringFromConfiguration()
@@ -30,7 +30,7 @@ namespace ZW.AttSvc.EntityFrameworkCore
                 .SetBasePath(
                     Path.Combine(
                         Directory.GetCurrentDirectory(),
-                        $"..{Path.DirectorySeparatorChar}AttSvc.HttpApi.Host"
+                        $"..{Path.DirectorySeparatorChar}ZW.AttSvc.HttpApi.Host"
                     )
                 )
                 .AddJsonFile("appsettings.json", optional: false);

@@ -9,6 +9,8 @@ using Volo.Abp.Autofac;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 using ZW.AttSvc.EntityFrameworkCore;
+using ZW.Shared.Hosting.AspNetCore;
+using ZW.Shared.Hosting.Microservices;
 
 namespace ZW.AttSvc.HttpApi.Host
 {
@@ -19,7 +21,9 @@ namespace ZW.AttSvc.HttpApi.Host
         typeof(AbpAspNetCoreMultiTenancyModule),
         typeof(AbpAutofacModule),
         typeof(AbpAspNetCoreSerilogModule),
-        typeof(AbpSwashbuckleModule)
+        typeof(AbpSwashbuckleModule),
+        typeof(ZWSharedHostingMicroservicesModule),
+        typeof(ZWSharedHostingAspNetCoreModule)
         )]
     public class AttSvcHttpApiHostModule : AbpModule
     {
