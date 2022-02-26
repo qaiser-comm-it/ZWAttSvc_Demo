@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@z-w/att-svc": [
+        "projects/att-svc/src/public-api.ts"
+      ],
+      "@z-w/att-svc/config": [
+        "projects/att-svc/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/att-svc/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/att-svc/src/lib/proxy/*"]
+    }
+  }
+}
